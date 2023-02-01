@@ -1,0 +1,95 @@
+"""
+print(os.getcwd())
+
+os.chdir('..')
+
+print(os.getcwd())
+
+os.chdir('..')
+
+print(os.getcwd())
+
+os.chdir('..')
+
+print(os.getcwd())
+
+os.chdir('..')
+
+print(os.getcwd())
+
+os.chdir('..')
+
+print(os.getcwd())
+
+os.chdir('..')
+
+print(os.getcwd())
+
+print(len(os.listdir('/etc')))
+
+print(len(list(os.scandir('/etc'))))
+
+import os
+
+os.mknod('arquivo4.txt')
+
+os.mknod('/home/andre/imagens.txt')
+
+# Path Absoluto
+print(os.path.exists('/home/andre/PycharmProjects/guppe/andre/Aulas/Sistema_de_Navegacao.py'))
+
+
+# Path Relativo
+print(os.path.exists('../Loja'))
+
+try:
+    os.mkdir('../../Diretorio')
+    os.mknod('../../Diretorio/teste_arquivo.txt')
+    print('Criado')
+except(FileExistsError, FileNotFoundError):
+    pass
+
+os.rename('../../Diretorio/teste_arquivo.txt', '../../Diretorio/renomear_arquivo.txt')
+
+os.remove('../../Diretorio/teste_arquivo.txt')
+
+import os
+
+try:
+    os.mkdir('../../Diretorio')
+    try:
+        os.mknod('../../Diretorio/teste_arquivo.txt')
+    except FileExistsError:
+        pass
+    print('Criado')
+except(FileExistsError, FileNotFoundError):
+    print('Tudo foi criado')
+
+import os
+
+print(os.remove('../../Diretorio/teste_arquivo.txt'))
+
+print(os.remove('../../Diretorio'))
+
+import os
+
+
+
+"""
+import os
+
+
+def excluir():
+    try:
+        try:
+            os.rmdir('../../Directory')
+        except OSError:
+            dire = '../../Directory'
+            for i in os.listdir(dire):
+                os.remove(os.path.join(dire, i))
+            return excluir()
+    except FileNotFoundError:
+        print('Item ja excluido')
+
+
+excluir()
